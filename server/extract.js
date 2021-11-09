@@ -37,7 +37,7 @@ function extract(html, model, options = {}) {
 
   parser.end(html)
 
-  return extractItem(handler.dom, deserializedModel, cssSelect, getters, filters)
+  return extractItem(handler.dom, deserializedModel, cssSelect, getters, Object.assign({}, filters, options.filters))
 }
 
 module.exports = {
